@@ -1,7 +1,10 @@
-<link rel="stylesheet" href="/public/assets/style.css">
-<form method="post" action="/login/check">
-		<input name="username" placeholder="Username" required>
-		<input name="password" type="password" placeholder="Password" required>
-		<button>Login</button>
+<h2>Login Page</h2>
+<form method="post" action="/login/verify">
+	<label>Username:</label>
+	<input type="text" name="username"><br>
+
+	<label>Password:</label>
+	<input type="password" name="password"><br>
+
+	<input type="submit" value="Login">
 </form>
-<a href="/login/create">Create Account</a>
