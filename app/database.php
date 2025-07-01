@@ -1,15 +1,14 @@
 <?php
 
+/* database connection stuff here
+ * 
+ */
+
 function db_connect() {
-    try {
-        $dbh = new PDO(
-            'mysql:host=5q31t.h.filess.io;port=3305;dbname=COSC4806_hospitalbe',
-            'COSC4806_hospitalbe',
-            $_ENV['DB_PASS']
-        );
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    try { 
+        $dbh = new PDO('mysql:host=' . DB_HOST . ';port='. DB_PORT . ';dbname=' . DB_DATABASE, DB_USER, DB_PASS);
         return $dbh;
     } catch (PDOException $e) {
-        die("DB Error: " . $e->getMessage());
+        //We should set a global variable here so we know the DB is down
     }
 }
